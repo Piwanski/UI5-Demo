@@ -1,0 +1,12 @@
+specVersion: "3.2"
+metadata:
+  name: fiorilikeapp
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        backend:
+        - path: /sap
+          url: https://sap2.remoteides.com:8021
