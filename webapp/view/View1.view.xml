@@ -1,0 +1,38 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          controllerName="ey.hr.payroll.controller.View1">
+    <Page title="View 1">
+    <headerContent>
+     <Button text="Go to Next" icon="sap-icon://arrow-right" press="onNext"/>
+    </headerContent>
+    <content>
+    <SearchField id="idSearch" search="onSearch" liveChange="onSearch"></SearchField>
+    <List id="idList" items="{ path: '/fruits', sorter: {path: 'taste', group: true} }"
+       mode="SingleSelectMaster" delete="onItemDelete" selectionChange="onItemSelect">
+    <!--<headerToolbar>
+    <Toolbar>
+    <Button icon="sap-icon://delete" press="onDelete"> </Button>
+    </Toolbar>
+    </headerToolbar> -->
+       <items>
+       <ObjectListItem title="{name}" intro="{taste}"
+                            number="{price}" numberUnit="{curr}"
+                            icon="{image}" >
+       <firstStatus>
+       <ObjectStatus text="{path: 'availability',
+                                  formatter: '.formatter.getStatus'}" state="{ 
+                                                                      path: 'availability',
+                                                                      formatter: '.formatter.getColorCode'
+                                                                      }"></ObjectStatus>
+       </firstStatus>
+       <attributes>
+       <ObjectAttribute text="{season}" title="Season"></ObjectAttribute>
+       </attributes>
+       </ObjectListItem>
+       </items>
+    </List>
+    </content>   
+    <footer>
+    <Toolbar></Toolbar>
+    </footer>  
+    </Page>
+</mvc:View>
